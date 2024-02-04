@@ -1,0 +1,153 @@
+a. Create a repository name: git_assignment_HeroVired
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git
+$ git init git_assignment_HeroVired
+Initialized empty Git repository in C:/Users/njalkote/Documents/Assignment2-git/git_assignment_HeroVired/.git/
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git
+$ cd git_assignment_HeroVired
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ touch readme.md
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git add .
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git commit -m "First commit"
+[master (root-commit) 066e84b] First commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 readme.md
+
+
+b. Create a ‘dev’ branch and add this code.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/sqrt)
+$ touch calculator.py
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/sqrt)
+$ vi calculator.py
+
+
+c. Merge this branch with the main branch and make a release of version 1 of the ‘calculator plus app’.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/sqrt)
+$ git checkout master
+Switched to branch 'master'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git merge dev
+Already up to date.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git tag -a V1 -m "release of V1"
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git push origin master --tags
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git remote add origin https://github.com/nikitajalkote/git_assignment_HeroVired.git
+
+e. Implement a feature by creating a new branch called ‘feature/sqrt’. f. Add the ‘sqrt’ code to it.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git checkout -b feature/sqrt
+fatal: a branch named 'feature/sqrt' already exists
+
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/sqrt)
+$ git merge dev
+Already up to date.
+
+g. While you are working on this feature, imagine that one critical bug is reported in the main branch, and you need to switch back to the ‘dev’ branch, create fixes, and apply them while keeping your ‘feature/sqrt’ branch up-to-date. For this, you need to create
+
+The bug fixation is in the divide function and the new function should be: def divide(self, a, b):
+
+if b == 0:
+
+raise ValueError("Cannot divide by zero.")
+
+return a / b
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (dev)
+$ vi calculator.py
+
+h. After completing the feature implementation and ensuring that the application works correctly, create a pull request targeting the main branch.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (dev)
+$ git checkout feature/sqrt
+Switched to branch 'feature/sqrt'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/sqrt)
+$ git merge dev
+Already up to date.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (dev)
+$ git push origin dev
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+client_loop: send disconnect: Connection reset by peer
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+
+j. Once the code reviewer approves your pull request, merge the "feature/sqrt" branch into the ‘dev’ branch.
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/sqrt)
+$ git checkout dev
+Switched to branch 'dev'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (dev)
+$ git merge feature/sqrt
+Already up to date.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (dev)
+$ git push origin dev
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+client_loop: send disconnect: Connection reset by peer
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+
+k. Finally, do the testing in the ‘dev’ branch itself and merge it into the ‘main’ branch and create a ‘version 2’ release.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (dev)
+$ git checkout dev
+Already on 'dev'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (dev)
+$ git checkout master
+Switched to branch 'master'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git merge dev
+Already up to date.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git tag -a v2 -m "V2 release"
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git push origin master --tags
+Connection reset by 64:ff9b::14cf:4952 port 22
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git remote set-url origin git@github.com:nikitajalkote/git_assignment_HeroVired.git
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git push origin master --tags                                                 Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 162 bytes | 162.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:nikitajalkote/git_assignment_HeroVired.git
+ * [new tag]         v2 -> v2
+
+

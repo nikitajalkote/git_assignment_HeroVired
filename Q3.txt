@@ -1,0 +1,152 @@
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (lfs)
+$ git checkout -b geometry-calculator
+Switched to a new branch 'geometry-calculator'
+
+a. Create a New Branch:
+
+- Create a new branch named "feature/circle-area" to work on the circle area feature
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (geometry-calculator)
+$ git checkout -b feature/circle-area
+Switched to a new branch 'feature/circle-area'
+
+
+b. Stash Changes for Circle Area Feature:
+
+- Before committing the changes, stash them using git stash to save the incomplete feature implementation.
+
+- Verify that the working directory is clean
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/circle-area)
+$ git status
+On branch feature/circle-area
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitattributes.swp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/circle-area)
+$ git stash save "feature"
+Saved working directory and index state On feature/circle-area: feature
+
+
+c. Create a New Branch for Rectangle Area Feature:
+
+- Create a new branch named "feature/rectangle-area" to work on the rectangle area
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/circle-area)
+$ git checkout -b feature/rectangle-area
+Switched to a new branch 'feature/rectangle-area'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/rectangle-area)
+$ git status
+On branch feature/rectangle-area
+nothing to commit, working tree clean
+
+
+
+d. Stash Changes for Rectangle Area Feature:
+
+- Before committing the changes, stash them using git stash to save the incomplete feature implementation.
+
+- Verify that the working directory is clean
+
+
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/rectangle-area)
+$ git stash save "rectangle feature"
+No local changes to save
+
+
+
+e. Switch Back to Circle Area Branch:
+
+- Switch back to the "feature/circle-area" branch to continue working on the circle area feature.
+
+- Retrieve the stashed changes
+
+- Complete the circle area feature implementation and save the changes. f. Commit and Push Circle Area Feature:
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/rectangle-area)
+$ git checkout feature/circle-area
+Switched to branch 'feature/circle-area'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/circle-area)
+$ git stash pop
+On branch feature/circle-area
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitattributes.swp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (75a3cca50b5360d26adad6a5bfc0d9e97a34972a)
+
+
+
+g. Switch Back to Rectangle Area Branch:
+
+- Switch back to the "feature/rectangle-area" branch to continue working on the rectangle area feature.
+
+- Retrieve the stashed changes
+
+- Complete the rectangle area feature implementation and save the changes. h. Commit and Push Rectangle Area Feature
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/circle-area)
+$ ls
+abc.largefile  calculator.py  readme.md
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (feature/circle-area)
+$ git checkout geometry-calculator
+Switched to branch 'geometry-calculator'
+M       .gitattributes.swp
+
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (geometry-calculator)
+$ touch GeometryCalculator.py
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (geometry-calculator)
+$ vi GeometryCalculator.py
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (geometry-calculator)
+$ vi GeometryCalculator.py
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (geometry-calculator)
+$ git add .
+warning: in the working copy of 'GeometryCalculator.py', LF will be replaced by CRLF the next time Git touches it
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (geometry-calculator)
+$ git add .
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (geometry-calculator)
+$ git commit -m "removed comment for rectangle area"
+[geometry-calculator 038c8b7] removed comment for rectangle area
+ 2 files changed, 31 insertions(+)
+ create mode 100644 GeometryCalculator.py
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (geometry-calculator)
+$ git push origin feature/rectangle-area
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'feature/rectangle-area' on GitHub by visiting:
+remote:      https://github.com/nikitajalkote/git_assignment_HeroVired/pull/new/feature/rectangle-area
+remote:
+To github.com:nikitajalkote/git_assignment_HeroVired.git
+ * [new branch]      feature/rectangle-area -> feature/rectangle-area
+
+
+
+i. Create Pull Requests:
+
+- Create a pull request to the ‘dev’ branch.
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignmentHeroVired (geometry-calculator)
+$ git pull origin dev
+From github.com:nikitajalkote/git_assignment_HeroVired
+ * branch            dev        -> FETCH_HEAD
+ * [new branch]      dev        -> origin/dev
+Already up to date.
+
+
+j. Review and Merge
+
+- Have another team member or reviewer review your pull requests. - After receiving approval, merge both pull requests into the main branch.
+

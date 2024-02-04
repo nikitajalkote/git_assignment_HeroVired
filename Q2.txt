@@ -1,0 +1,50 @@
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git lfs install
+Updated Git hooks.
+Git LFS initialized.
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ touch .gitattributes
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ vi .gitattributes
+
+[1]+  Stopped                 vi .gitattributes
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ touch abc.largefile
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (master)
+$ git checkout -b lfs
+Switched to a new branch 'lfs'
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (lfs)
+$ git add .
+warning: in the working copy of '.gitattributes', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'calculator.py', LF will be replaced by CRLF the next time Git touches it
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (lfs)
+$ git commit -m "large file commit"
+[lfs d57111b] large file commit
+ 3 files changed, 52 insertions(+)
+ create mode 100644 .gitattributes.swp
+ create mode 100644 abc.largefile
+ create mode 100644 calculator.py
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (lfs)
+$ git push origin lfs
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 950 bytes | 950.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'lfs' on GitHub by visiting:
+remote:      https://github.com/nikitajalkote/git_assignment_HeroVired/pull/new/lfs
+remote:
+To github.com:nikitajalkote/git_assignment_HeroVired.git
+ * [new branch]      lfs -> lfs
+
+APAC+njalkote@TIBCO-PG030Z1L MINGW64 ~/Documents/Assignment2-git/git_assignment_HeroVired (lfs)
+$
